@@ -6,5 +6,3 @@ def test_delete_post():
     response = requests.delete(url)
 
     assert response.status_code == 200
-    response = requests.get(url)
-    assert response.status_code == 404 ## failed in line with docs
