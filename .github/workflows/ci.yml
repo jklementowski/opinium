@@ -22,4 +22,4 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest --html=pytest_report.html 
+        pytest --html=${{ github.workspace }}reports/pytest_report.html 
