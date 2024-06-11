@@ -22,4 +22,10 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest --html=${{ github.workspace }}reports/pytest_report.html 
+        pytest --html=pytest_report.html 
+
+    - name: Upload HTML report
+      uses: actions/upload-artifact@v2
+      with:
+        name: pytest-report
+        path: pytest_report.html
