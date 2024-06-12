@@ -22,40 +22,40 @@ jobs:
 
     - name: Run tests - get suite
       run: |
-        pytest --suite=get_test_suite --html=pytest_report_get.html --self-contained-html
+        pytest --suite=get_test_suite --html=reports_get/pytest_report_get.html --self-contained-html
 
     - name: Run tests - post suite
       run: |
-        pytest --suite=post_test_suite --html=pytest_report_post.html --self-contained-html
+        pytest --suite=post_test_suite --html=reports_post/pytest_report_post.html --self-contained-html
     
     - name: Run tests - put suite
       run: |
-        pytest --suite=put_test_suite --html=pytest_report_put.html --self-contained-html
+        pytest --suite=put_test_suite --html=reports_put/pytest_report_put.html --self-contained-html
 
     - name: Run tests - delete suite
       run: |
-        pytest --suite=delete_test_suite --html=pytest_report_put.html --self-contained-html
+        pytest --suite=delete_test_suite --html=reports_delete/pytest_report_delete.html --self-contained-html
 
     - name: Upload HTML report - get suite
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: pytest-report_get
-        path: reports/
+        path: reports_get/
     
     - name: Upload HTML report - post suite
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: pytest-report_post
-        path: reports/
+        path: reports_post/
 
     - name: Upload HTML report - put suite
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: pytest-report_put
-        path: reports/
+        path: reports_put/
 
     - name: Upload HTML report - delete suite
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
           name: pytest-report_delete
-          path: reports/
+          path: reports_delete/
