@@ -15,7 +15,7 @@ def pytest_collection_modifyitems(config, items):
                 deselected_items.append(item)
 
         items[:] = selected_items
-        config.hook.pytest_deselected(item=deselected_items)
+        config.hook.pytest_deselected(items=deselected_items)
 
 def pytest_addoption(parser):
     parser.addoption("--suite", action="store", default=None, help="Specify the test suite to run")
