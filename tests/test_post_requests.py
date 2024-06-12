@@ -1,5 +1,7 @@
 import requests
+from test_decorators import post_test_suite
 
+@post_test_suite
 def test_create_new_post():
     url = 'https://jsonplaceholder.typicode.com/posts'
     payload = {

@@ -1,6 +1,8 @@
 import requests
 import responses
+from test_decorators import mocking_test_suite
 
+@mocking_test_suite
 @responses.activate
 def test_mock_get_post():
     url = 'https://jsonplaceholder.typicode.com/posts/1'

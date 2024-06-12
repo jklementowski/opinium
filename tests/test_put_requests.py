@@ -1,5 +1,7 @@
 import requests
+from test_decorators import post_test_suite
 
+@post_test_suite
 def test_update_post():
     post_id = 1 
     url = f'https://jsonplaceholder.typicode.com/posts/{post_id}'

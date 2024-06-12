@@ -1,11 +1,14 @@
 import requests
+from test_decorators import get_test_suite
 
+@get_test_suite
 def test_get_all_posts():
     response = requests.get('http://jsonplaceholder.typicode.com/posts')
     assert response.status_code == 200
     assert isinstance(response.json(),list)
     assert len(response.json()) > 0 
 
+@get_test_suite
 def test_get_single_post():
     post_id = 1 
     response = requests.get(f'https://jsonplaceholder.typicode.com/posts/{post_id}')
@@ -15,6 +18,7 @@ def test_get_single_post():
     assert 'title' in post
     assert 'body' in post
 
+@get_test_suite
 def test_get_single_post_comments():
     post_id = 1 
     response = requests.get(f'https://jsonplaceholder.typicode.com/posts/{post_id}/comments')
